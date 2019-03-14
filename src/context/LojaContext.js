@@ -14,7 +14,7 @@ export const LojaContext = React.createContext();
 export class LojaProvider extends Component {
   state = {
     produtos: BancoDeDados.getProdutos(),
-    carrinho: [],
+    carrinho: JSON.parse(localStorage.getItem('carrinho')) || [],
     carrinhoVisivel: false
   };  
 
@@ -31,11 +31,13 @@ export class LojaProvider extends Component {
           comprar: (produto) => {
             let carrinho = [...this.state.carrinho, produto];
             this.setState({carrinho});
+            localStorage.setItem('carrinho', JSON.stringify(carrinho))
           },
           remover: (indice) => {
             let carrinho = [...this.state.carrinho];
             carrinho.splice(indice, 1);
             this.setState({carrinho});
+            localStorage.setItem('carrinho', JSON.stringify(carrinho))
           },
           mostrarCarrinho: () => {
             this.setState({carrinhoVisivel: true});
