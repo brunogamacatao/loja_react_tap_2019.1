@@ -13,6 +13,7 @@ export const LojaContext = React.createContext();
 // esses valores para os componentes filhos.
 export class LojaProvider extends Component {
   state = {
+    appName: "UNIFACISA Store",
     produtos: BancoDeDados.getProdutos(),
     carrinho: JSON.parse(localStorage.getItem('carrinho')) || [],
     carrinhoVisivel: false
@@ -28,7 +29,7 @@ export class LojaProvider extends Component {
             });
             this.setState({produtos});
           },
-          comprar: (produto) => {
+          comprar: (produto) => {            
             let carrinho = [...this.state.carrinho, produto];
             this.setState({carrinho});
             localStorage.setItem('carrinho', JSON.stringify(carrinho))
