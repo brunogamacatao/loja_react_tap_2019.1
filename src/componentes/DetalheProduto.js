@@ -4,7 +4,7 @@ class DetalheProduto extends Component {
 
     render(){
         return (
-            <p>Aqui sera os DetalheProduto</p>
+            <p>Aqui sera os DetalheProduto, ok?</p>
         );
     }
 
