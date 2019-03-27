@@ -4,13 +4,12 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import styles from './Login.css';
 
 class Login extends Component {  
   render(){
     return (
       <Col xs={4}>
-        <Card className={styles.middle_center}>
+        <Card>
           <Card.Header as="h4">Entre com sua conta:</Card.Header>
 
           <Card.Body>

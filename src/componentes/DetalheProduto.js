@@ -8,6 +8,8 @@ import Button from 'react-bootstrap/Button';
 class DetalheProduto extends Component {
   
   render(){
+
+    //TODO: preciso refatorar isso aqui pra pegar o item pelo id, e quando fizer a compra passar o id como parametro para o carrinho, que irá procurar e selectioonar o elemento para exbir em sua lista 
     return (
       <Col xs={10}>
         <Card className="text-center m-2">
