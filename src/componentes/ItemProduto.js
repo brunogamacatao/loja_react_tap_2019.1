@@ -9,7 +9,7 @@ class ItemProduto extends Component {
   render() {
     return (
       <Col xs={3}>
-        <Card className="text-center">
+        <Card className="text-center m-2">
           <Card.Header as="h5">{this.props.produto.nome}</Card.Header>
           <Card.Img variant="top" src={this.props.produto.imagem} />
           <Card.Body>
