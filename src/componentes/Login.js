@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
+import { LojaContext } from '../context/LojaContext';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import styles from './Login.css';
 
-class Login extends Component {
-  
+class Login extends Component {  
   render(){
     return (
-      <>
-      <h1>Entre com sua conta:</h1>
-      
-      <label>Email:</label>
-      <input type="email" required></input>
-      
-      <label>Senha:</label>
-      <input type="password" required></input>
-      
-      <input type="submit"></input>
-      </>
-      );
-    }
-    
+      <Col xs={4}>
+        <Card className={styles.middle_center}>
+          <Card.Header as="h4">Entre com sua conta:</Card.Header>
+
+          <Card.Body>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Seu E-mail:</Form.Label>
+              <Form.Control type="email" placeholder="Insira seu e-mail" required />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Senha:</Form.Label>
+              <Form.Control type="password" placeholder="Senha" required />
+            </Form.Group>
+
+            <Button variant="outline-primary" block onClick={() => this.context.fazerLogin()}>
+              Fazer login
+            </Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    );
   }
-  
-  export default Login;
+    
+}
+
+Login.contextType = LojaContext;
+
+
+export default Login;
