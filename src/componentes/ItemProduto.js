@@ -15,7 +15,7 @@ class ItemProduto extends Component {
             <Card.Img variant="top" src={this.props.produto.imagem} />
             <Card.Body>
               <Card.Title><FormataMoeda valor={this.props.produto.preco}/></Card.Title>
-              <Link className="outline-primary" to="/produtos/2">Ver detalhes</Link>
+              <Link className="outline-primary" to={'/produtos/' + this.props.produto.id}>Ver detalhes</Link>
             </Card.Body>
           </Card>
         </Col>

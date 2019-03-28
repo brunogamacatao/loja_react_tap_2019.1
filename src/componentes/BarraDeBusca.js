@@ -11,7 +11,7 @@ class BarraDeBusca extends Component {
   render() {
     return (
       <Navbar bg="light" fixed="top">
-        <Navbar.Brand>{ this.context.state.appName} </Navbar.Brand>
+        <Navbar.Brand>{this.context.state.appName}</Navbar.Brand>
 
         <Nav>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -29,8 +29,8 @@ export class LojaProvider extends Component {
           });
           this.setState({produtos});
         },
-        comprar: (produto) => {            
-          let carrinho = [...this.state.carrinho, produto];
+        comprar: (produtoId) => {            
+          let carrinho = [...this.state.carrinho, this.state.produtos.find(item => item.id === produtoId)];
           this.setState({carrinho});
           localStorage.setItem('carrinho', JSON.stringify(carrinho))
         },
